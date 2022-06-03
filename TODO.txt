@@ -1,0 +1,19 @@
+1. Fakedex
+	- add entry
+	- view entries
+	- update entry
+	- remove entry
+2. Exploration
+	- encounters
+	- ui/ux
+3. Box
+	- entries
+	- release
+	- search
+	- sort
+4. Settings
+	- save
+	- load
+5. General
+	- documentation
+	- test script
