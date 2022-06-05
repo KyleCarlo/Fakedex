@@ -23,6 +23,33 @@
 #define PINK 199
 #define CYAN 86
 
+/*ARROW KEYS DEFINED*/
+#define UP 72
+#define DOWN 80
+#define LEFT 75
+#define RIGHT 77
+
+/*ENTER KEY DEFINED*/
+#define ENTER 13
+
+/*UI (ascii symbol) DEFINED*/
+#define TRIANGLE 30     // ▲
+#define I_TRIANGLE 31   // ▼
+#define L_TRIANGLE 17   // ◄
+#define R_TRIANGLE 16   // ►
+
+#define HORLINE 196     // ─
+#define D_HORLINE 205   // ═
+#define VERLINE 179     // │
+#define D_VERLINE 186   // ║
+
+#define UL_LINE 218     // ┌
+#define UL_DLINE 201    // ╔
+#define UR_LINE 191     // ┐
+#define UR_DLINE 187    // ╗
+
+#define L_SELECTOR 175  // »
+
 typedef struct ENTRY{
     char name[12];
     char shortName[6];
@@ -41,46 +68,72 @@ void colorChange(int foreground, int background)
     else printf("\x1b[0m"); //resets the foreground and background color
 }
 
-void printMainMenu()
+int arrowKey(int key, int numChoices)
 {
-    printf("---------------------\n\n");
-
+    int arrowKey;
+    if (getch() == 224)
+    {    
+        arrowKey = getch();
+        switch (arrowKey)
+        {
+        case UP:
+        case LEFT:
+            if (key - 1 >= 0)
+                return (key - 1) % numChoices;
+            else
+                return numChoices - 1;
+        case DOWN:
+        case RIGHT:
+            return (key + 1) % numChoices;
+        default:
+            return key;
+        }
+    }
+    else return ENTER;
 }
 
-void main(){
-    colorChange(WHITE, DARK_GREEN);
-    printf("%c %c %c\n",218, 30, 191);
-    printf("%c %c %c\n",17,  'O', 16);
-    printf("%c %c %c\n",192, 31, 217);
-    colorChange(DARK_GREEN, LIGHT_GREEN);
-    for (int j = 0; j < 3; j++)
-    {    
-        for (int i = 0; i < 5; i++)
-        {
-            printf("%c", 30);
-        }
-        printf("\n");
-    }
-    colorChange(LIGHT_GREEN, DARK_GREEN);
-    for (int j = 0; j < 3; j++)
-    {    
-        for (int i = 0; i < 5; i++)
-        {
-            printf("%c", 30);
-        }
-        printf("\n");
-    }
-    colorChange(DARK_GREEN, LIGHT_GREEN);
-    for (int j = 0; j < 3; j++)
-    {    
-        for (int i = 0; i < 5; i++)
-        {
-            printf("%c", 30);
-        }
-        printf("\n");
-    }
-    colorChange(RESET, RESET);
-    // srand(time(NULL));
-    // if (rand() % 10 <= 3)
+void printMainMenu()
+{
+    int choice = 0, i;
+    
+    while(choice != ENTER)
+    {
+        colorChange(BLACK, WHITE);
+        printf("     MAIN MENU       \n");
 
+        for(i = 0; i < 21; i++)
+            printf("%c", HORLINE);
+        printf("\n");
+
+        for(i = 0; i < 5; i++)
+        {
+            printf("     ");
+            
+            if (choice == i)
+                printf("%c ", 175);
+            
+            switch (i)
+            {
+                case 0: printf("Fak%cdex       ", 130); break;
+                case 1: printf("Exploration   "); break;
+                case 2: printf("Box           "); break;
+                case 3: printf("Settings      "); break;
+                case 4: printf("Exit          "); break;
+            }
+
+            if (choice == i)
+                printf("\n");
+            else printf("  \n");
+        }
+        choice = arrowKey(choice, 5);
+        colorChange(RESET, RESET);
+        system("cls");
+    }
+}
+
+void main()
+{
+    int mainChoice;
+    system("cls");
+    printMainMenu();
 }
