@@ -1,0 +1,61 @@
+SLOT: 0
+NAME: Gengar
+SHORT NAME: GENGR
+DESCRIPTION: A spooky ghost.
+GENDER: MALE
+CAUGHT: NO
+
+SLOT: 1
+NAME: Chansey
+SHORT NAME: CHNSY
+DESCRIPTION: The lucky egg.
+GENDER: FEMALE
+CAUGHT: NO
+
+SLOT: 2
+NAME: Pika
+SHORT NAME: PICHU
+DESCRIPTION: The lightning rat.
+GENDER: MALE
+CAUGHT: NO
+
+SLOT: 3
+NAME: Dragapult
+SHORT NAME: DRAGA
+DESCRIPTION: The dragon pokemon.
+GENDER: UNKNOWN
+CAUGHT: YES
+
+SLOT: 4
+NAME: Luxray
+SHORT NAME: LXRAY
+DESCRIPTION: The Xray pokemon.
+GENDER: MALE
+CAUGHT: YES
+
+SLOT: 5
+NAME: Metagross
+SHORT NAME: METAG
+DESCRIPTION: Dual-type steel/psychic pseudo-legendary Pokemon introduced in Generation III. It evolves from Metang starting at level 45. It is the final form of Beldum.
+GENDER: UNKNOWN
+CAUGHT: NO
+
+SLOT: 6
+NAME: Rayquaza
+SHORT NAME: RYQZA
+DESCRIPTION: Dual-type Dragon/Flying Legendary Pokémon introduced in Generation III.
+GENDER: UNKNOWN
+CAUGHT: YES
+--------- DEX END ---------
+SLOT: 0
+NAME: Dragapult
+SHORT NAME: DRAGA
+
+SLOT: 1
+NAME: Luxray
+SHORT NAME: LXRAY
+
+SLOT: 2
+NAME: Rayquaza
+SHORT NAME: RYQZA
+--------- BOX END ---------
