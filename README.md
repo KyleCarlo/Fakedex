@@ -1,6 +1,6 @@
 # Pokémon Simulation Game
 
-This is my second C project, after I created my [first C-based game project](https://github.com/KyleCarlo/First-C-based-Mini-Game). 😊 I created this project to enhance my proficiency in using data structures.
+This is my second C project, following my first C-based game project, which I created in 2022 to enhance my proficiency in using data structures. 😊
 
 This project simulates a simple Pokémon-like game, allowing players to enter Pokémon information and attempt to catch them during exploration. It features gameplay mechanics for managing a Pokédex, capturing Pokémon, and maintaining a storage box.
 
